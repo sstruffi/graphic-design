@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphic Design - Sara Truffi Portfolio</title>
+
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+
+      body {
+        background: #fcfaf5;
+        font-family: Arial, sans-serif;
+        color: #5a3b4d;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      nav ul { list-style: none; }
+
+      nav ul li {
+        display: inline-block;
+        position: relative;
+        margin-right: 20px;
+      }
+
+      nav a {
+        text-decoration: none;
+        font-size: 18px;
+        color: #d14f9c;
+        padding: 6px 10px;
+        display: block;
+      }
+
+      nav a:hover { color: #ffb6db; }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        min-width: 200px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        z-index: 1000;
+      }
+
+      .dropdown-content li {
+        display: block;
+        margin: 0;
+      }
+
+      .dropdown-content a {
+        padding: 12px 16px;
+      }
+
+      .dropdown-content a:hover {
+        background: #eeeeee;
+        color: #ffb6db;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .hero {
+        text-align: center;
+        padding: 60px 0 20px;
+      }
+
+      .eyebrow {
+        font-size: 0.85em;
+        text-transform: uppercase;
+        letter-spacing: 1.6px;
+        color: #b87aa0;
+        margin-bottom: 12px;
+      }
+
+      .hero h1 {
+        font-size: 3em;
+        color: #d14f9c;
+        margin-bottom: 15px;
+        line-height: 1.1;
+      }
+
+      .hero p {
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 1.8;
+        color: #7a5d6d;
+      }
+
+      .meta-row {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+        flex-wrap: wrap;
+      }
+
+      .meta-row span {
+        background: #fff0f7;
+        padding: 8px 14px;
+        border-radius: 30px;
+        font-size: 0.8em;
+        color: #d14f9c;
+        border: 1px solid #f3d6e6;
+      }
+
+      .featured-project {
+        max-width: 950px;
+        margin: 50px auto 0;
+      }
+
+      .project-card {
+        display: grid;
+        grid-template-columns: 1.1fr 1fr;
+        gap: 34px;
+        align-items: center;
+        background: #fffafc;
+        border: 1px solid #f3d6e6;
+        border-radius: 20px;
+        padding: 24px;
+      }
+
+      .project-image img {
+        width: 100%;
+        display: block;
+        border-radius: 14px;
+      }
+
+      .project-info h2 {
+        color: #d14f9c;
+        font-size: 2em;
+        margin-bottom: 10px;
+      }
+
+      .divider {
+        width: 40px;
+        height: 2px;
+        background: #d14f9c;
+        margin-bottom: 18px;
+      }
+
+      .project-info p {
+        line-height: 1.8;
+        color: #6d5c67;
+        margin-bottom: 16px;
+        font-size: 1.02em;
+      }
+
+      .project-label {
+        display: inline-block;
+        background: #fff0f7;
+        color: #d14f9c;
+        padding: 8px 14px;
+        border-radius: 30px;
+        font-size: 0.8em;
+        border: 1px solid #f3d6e6;
+        margin-bottom: 18px;
+      }
+
+      .project-button {
+        display: inline-block;
+        text-decoration: none;
+        color: #d14f9c;
+        border: 1px solid #d14f9c;
+        padding: 11px 18px;
+        border-radius: 999px;
+        font-size: 0.95em;
+        transition: all 0.2s ease;
+        margin-top: 8px;
+      }
+
+      .project-button:hover {
+        background-color: #d14f9c;
+        color: white;
+      }
+
+      .quote-block {
+        max-width: 760px;
+        margin: 80px auto 0;
+        text-align: center;
+      }
+
+      .quote-block p {
+        font-size: 1.25em;
+        line-height: 1.7;
+        color: #c6428f;
+      }
+
+      .section {
+        margin-top: 80px;
+        max-width: 750px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .section h2 {
+        color: #d14f9c;
+        margin-bottom: 10px;
+        font-size: 2em;
+      }
+
+      .section p {
+        line-height: 1.8;
+        margin-bottom: 15px;
+        color: #6d5c67;
+        font-size: 1.04em;
+      }
+
+      footer {
+        background: #d14f9c;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-top: 60px;
+      }
+
+      @media (max-width: 900px) {
+        .project-card {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 700px) {
+        .container {
+          padding: 16px;
+        }
+
+        nav ul li {
+          display: block;
+          margin-right: 0;
+          margin-bottom: 8px;
+        }
+
+        .dropdown-content {
+          position: static;
+          display: block;
+          box-shadow: none;
+          background: transparent;
+          border-radius: 0;
+          min-width: unset;
+          margin-left: 10px;
+        }
+
+        .dropdown-content a {
+          padding: 8px 10px;
+          background: transparent;
+        }
+
+        .hero h1 {
+          font-size: 2.2em;
+        }
+
+        .project-info h2,
+        .section h2 {
+          font-size: 1.65em;
+        }
+
+        .quote-block,
+        .section {
+          margin-top: 60px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="container">
+      <nav>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+
+          <li class="dropdown">
+            <a href="work.index">Projects</a>
+            <ul class="dropdown-content">
+              <li><a href="videography.html">Videography</a></li>
+              <li><a href="branding.html">Branding</a></li>
+              <li><a href="web-app.html">Web and App</a></li>
+              <li><a href="graphic-design.html">Graphic Design</a></li>
+            </ul>
+          </li>
+
+          <li><a href="aboutme.html">About Me</a></li>
+          <li><a href="contactme.html">Contact Me</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="container">
+      <section class="hero">
+        <p class="eyebrow">Selected Work</p>
+        <h1>Graphic Design</h1>
+        <p>
+          A selection of graphic design work focused on visual communication,
+          typography, storytelling, and creating designs that feel both intentional and expressive.
+        </p>
+
+        <div class="meta-row">
+          <span>Poster Design</span>
+          <span>Typography</span>
+          <span>Visual Storytelling</span>
+          <span>Layout</span>
+        </div>
+      </section>
+    </div>
+
+    <div class="featured-project">
+      <div class="project-card">
+        <div class="project-image">
+          <img src="goodDesignisBold.jpeg" alt="Good Design Is poster by Sara Truffi">
+        </div>
+
+        <div class="project-info">
+          <span class="project-label">Featured Project</span>
+          <h2>Good Design Is...</h2>
+          <div class="divider"></div>
+
+          <p>
+            A poster project based on my personal design philosophy, using bold visuals
+            and expressive typography to communicate what strong design means to me.
+          </p>
+
+          <p>
+            This project reflects my interest in graphic design that feels meaningful,
+            visually distinctive, and connected to storytelling.
+          </p>
+
+          <a href="good-design-is.html" class="project-button">View Project</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="quote-block">
+    </div>
+    <footer>@ 2026 Sara Truffi - All Rights Reserved</footer>
+
+  </body>
+</html>
